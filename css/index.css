@@ -27,7 +27,7 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 10px solid #000000;
+    border: 10px solid #fe2a05;
     border-top: 10px solid #fdfdfd;
     border-bottom: 10px solid #ffffff;
     animation: loading 3s linear infinite forwards
