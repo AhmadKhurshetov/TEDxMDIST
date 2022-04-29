@@ -114,7 +114,8 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
 }
 
 ul {
@@ -201,7 +202,8 @@ html.lock {
 }
 
 .header__logo img {
-    width: 80px
+    width: 300px;
+    /* outline: 1px solid red; */
 }
 
 .header__item .btn {
@@ -262,7 +264,7 @@ html.lock {
     box-shadow: none
 }
 
-.dropdown-menu.show {
+/* .dropdown-menu.show {
     transform: translate(0, 40px) !important
 }
 
@@ -307,7 +309,7 @@ html.lock {
     height: 2px;
     width: 0%;
     transition: 0.3s
-}
+} */
 
 .header__content {
     position: absolute;
@@ -357,7 +359,7 @@ html.lock {
 
 .header__box:hover {
     color: #ffffff;
-    cursor: pointer
+    cursor: default;
 }
 
 .header__box span {
@@ -390,7 +392,7 @@ html.lock {
 }
 
 .carousel-item {
-    height: 100vh
+    height: 100vh;
 }
 
 .cards {
@@ -452,7 +454,14 @@ html.lock {
 .card__img {
     height: 240px
 }
-
+/* .tap_more{
+    width: 100px;
+    height: 100px;
+    background-color: #8a1b1b;
+    color: #fff;
+    font-size: 50px;
+    border-radius: 50%;
+} */
 .hover__img {
     position: absolute;
     background: #8a1b1b;
@@ -469,8 +478,8 @@ html.lock {
 }
 
 .hover__img img {
-    width: 80px;
-    height: 80px
+    width: 230px;
+    height: 70px
 }
 
 .card__body {
@@ -541,7 +550,30 @@ html.lock {
     color: #b8b8b8;
     font-family: 'Playfair Display'
 }
+form{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+input,
+input:hover,
+input:focus {
+    color: #fff;
+    background-color: #111111;
+    border: none;
+    outline: none;
+    padding: 7px 10px 10px 0;
+    border-bottom: 2px solid transparent;
+    transition: 0.4s;
+    margin-top: 15px;
+    border-bottom: 2px solid #d1d1d1;
+    font-family: 'Open Sans'
+}
 
+input:hover,
+input:focus {
+    border-bottom: 2px solid #8a1b1b
+}
 .subs__btn {
     padding: 8px 15px;
     border: none;
