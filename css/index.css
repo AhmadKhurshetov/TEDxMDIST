@@ -675,9 +675,14 @@ button.accordion-button.collapsed {
     margin: 10px 0 0
 }
 
+.footer__box{
+    width: 220px;
+}
+
 .footer__img {
+    font: center;
     height: 60%;
-    width: 60%
+    width: 100%
 }
 
 .footer__media {
