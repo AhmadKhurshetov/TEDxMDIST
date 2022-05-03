@@ -27,7 +27,7 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 10px solid #fe2a05;
+    border: 10px solid #ff1616;
     border-top: 10px solid #fdfdfd;
     border-bottom: 10px solid #ffffff;
     animation: loading 3s linear infinite forwards
@@ -39,8 +39,8 @@
     width: 116px;
     height: 99px;
     object-fit: cover;
-    background: #ffffff;
-    border: 1px solid #00000093;
+    background: transparent;
+    border: none;
     border-radius: 50%
 }
 
@@ -130,11 +130,15 @@ li {
 }
 
 a {
-    text-decoration: none
+    font-family: 'Playfair Display';
+    padding: 0;
+    color: #000000;
+    text-decoration: none;
+    transition: 0.4s
 }
 
 a:hover {
-    color: #ffffff
+    color: #8a1b1c
 }
 
 img {
@@ -424,11 +428,20 @@ html.lock {
 .card__title {
     font-size: 40px
 }
-
-.card__subtitle {
-    color: #525252
+.card__info .news{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 }
-
+.news .card__others {
+    font-size: 19px;
+    font-weight: 700;
+    
+}
+.card__body .card__subtitle {
+    color: #525252;
+    padding: 0 0 10px
+}
 .card__box:hover {
     cursor: pointer
 }
@@ -574,6 +587,10 @@ input:hover,
 input:focus {
     border-bottom: 2px solid #8a1b1b
 }
+.contact__group {
+    display: flex;
+    flex-direction: row
+}
 .subs__btn {
     padding: 8px 15px;
     border: none;
@@ -667,22 +684,20 @@ button.accordion-button.collapsed {
 }
 
 .footer__numbers {
-    color: #ffffff
+    font-size: 19px;
+    font-family: 'Playfair Display';
+    padding: 0;
+    color: #ddd5d5
 }
-
 .footer__desc {
     color: #b8b8b8;
     margin: 10px 0 0
 }
 
-.footer__box{
-    width: 220px;
-}
-
 .footer__img {
     font: center;
     height: 60%;
-    width: 100%
+    width: 100% 
 }
 
 .footer__media {
@@ -735,6 +750,9 @@ button.accordion-button.collapsed {
 }
 
 @media (max-width: 1336px) {
+    .container{
+        max-width: 1100px;
+    }
     .panels {
         padding: 100px 0;
         background: url(../img/schoolgirl.png) no-repeat 600px -24px
@@ -742,6 +760,19 @@ button.accordion-button.collapsed {
 }
 
 @media (max-width: 1140px) {
+    .container{
+        max-width: 1000px;
+    }
+    .header__info:nth-of-type(1) {
+        position: relative;
+        top: 55px
+    }
+    .header__title{
+        font-size: 40px;
+    }
+    .header__link {
+        font-size: 16px 
+    }
     .panels {
         background: url(../img/schoolgirl.png) no-repeat 505px -24px
     }
@@ -756,6 +787,15 @@ button.accordion-button.collapsed {
         right: 30px;
         bottom: 30px
     }
+    .header__logo img {
+        width: 240px
+    }   
+    .header__content{
+        margin-top: 40px;
+    }
+    .header__title{
+        font-size: 40px;
+    }
     .header__link {
         font-size: 16px
     }
@@ -764,7 +804,28 @@ button.accordion-button.collapsed {
     }
     .panels {
         position: relative;
-        z-index: -1
+        z-index: 1
+    }
+    .info__box:nth-of-type(1),
+    .info__box:nth-of-type(2),
+    .info__box:nth-of-type(3) {
+        margin-bottom: 80px
+    }
+    .footer__box:nth-child(3){
+        position: relative;
+        top: 50px;
+    }
+    .footer__img {
+        width: 80%
+    }
+    .footer .row{
+        justify-content: start !important;
+    }
+}
+
+@media (max-width: 980px) {
+    .container{
+        max-width: 945px;
     }
 }
 
@@ -782,6 +843,12 @@ button.accordion-button.collapsed {
         z-index: 10;
         display: block
     }
+    .container{
+        max-width: 750px;
+    }
+    .header__logo img {
+        width: 270px
+    }   
     ul {
         display: unset
     }
@@ -802,6 +869,10 @@ button.accordion-button.collapsed {
         justify-content: flex-start;
         align-items: flex-start;
         transition: 0.5s
+    }
+    .header__info:nth-of-type(1) {
+        position: relative;
+        top: 0
     }
     .active.header__list {
         right: 50%
@@ -912,16 +983,11 @@ button.accordion-button.collapsed {
     .info {
         padding: 120px 0
     }
-    .info__box:nth-of-type(1),
-    .info__box:nth-of-type(2) {
-        margin-bottom: 100px
-    }
     .footer .row {
         justify-content: start
     }
-    .footer__box:nth-of-type(3) {
-        position: relative;
-        top: 80px
+    .footer__img {
+        width: 80%
     }
     .social__media .fab {
         background: #363130
@@ -930,16 +996,25 @@ button.accordion-button.collapsed {
 
 @media (max-width: 736px) {
     .container {
-        max-width: 700px
+        max-width: 710px
+    }
+    .header__logo img {
+        width: 270px
     }
     .header__btn {
         margin-top: 7px
+    }
+    .footer__img {
+        width: 80%
     }
 }
 
 @media (max-width: 684px) {
     .container {
-        max-width: 630px
+        max-width: 660px
+    }
+    .header__logo img {
+        width: 270px
     }
     .header__nav {
         padding: 30px 0
@@ -986,23 +1061,29 @@ button.accordion-button.collapsed {
     .footer__numbers {
         font-size: 22px
     }
-    .footer__box:nth-of-type(3) {
-        top: 72px
-    }
     .footer__img {
-        width: 56%
+        width: 80%
     }
 }
 
 @media (max-width: 667px) {
+    .header__logo img {
+        width: 270px
+    }
     .accordion-item {
         width: 285px
+    }
+    .footer__img {
+        width: 80%
     }
 }
 
 @media (max-width: 576px) {
     .container {
-        max-width: 560px
+        max-width: 561px
+    }
+    .header__logo img {
+        width: 240px
     }
     .header__title {
         position: relative;
@@ -1020,6 +1101,10 @@ button.accordion-button.collapsed {
     .subs__title {
         margin-top: 15px
     }
+    .contact__group {
+        display: flex;
+        flex-direction: column
+    }
     .panels {
         background: url(../img/schoolgirl.png) no-repeat 147px -24px
     }
@@ -1029,17 +1114,35 @@ button.accordion-button.collapsed {
     .panel__info {
         width: 90%
     }
+    .info__box:nth-of-type(1),
+    .info__box:nth-of-type(2),
+    .info__box:nth-of-type(3) {
+        margin-bottom: 80px
+    }
     .accordion-item {
         width: 250px
     }
-    .footer__box:nth-of-type(3) {
-        top: 80px
+    .footer__box {
+        margin: 30px 0;
+    }
+    .footer__box:nth-child(3){
+        top: 0;
+    }
+    .footer__img {
+        width: 40%
     }
 }
-
+@media (max-width: 439px) {
+    .header__logo img {
+        width: 220px
+    }
+}
 @media (max-width: 414px) {
     .container {
-        max-width: 390px
+        max-width: 399px
+    }
+    .header__logo img {
+        width: 210px
     }
     .header__list.active {
         right: 0%
@@ -1076,32 +1179,27 @@ button.accordion-button.collapsed {
     .accordion-item {
         width: 365px
     }
-    .info__box:nth-of-type(1),
-    .info__box:nth-of-type(2),
-    .info__box:nth-of-type(3) {
-        margin-bottom: 80px
-    }
     .footer__box {
         margin-bottom: 70px
-    }
-    .footer__box:nth-of-type(3) {
-        top: 0
     }
     .footer__box:nth-of-type(5) {
         margin-bottom: 0
     }
     .footer__img {
         margin-bottom: 10px;
-        width: 38%
+        width: 60%
     }
     .footer__hero {
-        margin: 0 49px
+        margin: 0 70px
     }
 }
 
 @media (max-width: 375px) {
     .container {
-        max-width: 348px
+        max-width: 360px
+    }
+    .header__logo img {
+        width: 190px
     }
     .subs__title {
         font-size: 28px
@@ -1118,7 +1216,7 @@ button.accordion-button.collapsed {
         width: 325px
     }
     .footer__img {
-        width: 35%
+        width: 60%
     }
     .footer__media {
         padding: 50px 50px;
@@ -1130,8 +1228,11 @@ button.accordion-button.collapsed {
 }
 
 @media (max-width: 320px) {
+    container {
+        max-width: 305px
+    }
     .header__logo img {
-        width: 60px
+        width: 170px
     }
     .header__title {
         font-size: 30px;
@@ -1154,6 +1255,6 @@ button.accordion-button.collapsed {
         width: 298px
     }
     .footer__img {
-        width: 35%
+        width: 80%
     }
 }
